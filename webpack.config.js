@@ -2,6 +2,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv  = require('dotenv-webpack');
 
 module.exports = {
   entry: './src/js/main.js',
@@ -18,8 +19,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'Shape Tracker',
       template: './src/index.html',
-      inject: 'body'
-    })
+      inject: 'body',
+    }),
+    new Dotenv()
   ],
   module: {
     rules: [
